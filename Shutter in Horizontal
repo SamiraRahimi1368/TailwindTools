@@ -1,1 +1,44 @@
+import styled, { css } from 'styled-components';
 
+const HoverShutterInButton = styled.button`
+background-color: purple;
+color:white;
+font-size: 1rem;
+font-weight: bold;
+padding: 0.5rem 1.5rem;
+border-radius: 0.25rem;
+position: relative;
+overflow: hidden;
+transition: all 0.3s ease-in-out;
+
+&:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0; /* Position the shutter effect at the left edge of the button */
+  right: 0; /* Position the shutter effect at the right edge of the button */
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+  z-index: 1; /* Make sure the shutter effect is above the button content */
+}
+
+&:hover:before {
+  transform: scaleX(1);
+  width: 100%; /* Expand the shutter effect to cover the entire button */
+
+}
+
+&:hover {
+
+  color: red !important;
+}
+`;
+                        <HoverShutterInButton
+                            className="w-40 h-12  rounded "
+                        >
+                            Lets Start
+                        </HoverShutterInButton>
